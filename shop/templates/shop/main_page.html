@@ -1,7 +1,9 @@
 {% extends 'shop/base.html' %}
 
 {% block content %}
-    <body>
-        <p>This is the main page</p>
-    </body>
+    <h2>Submit Quote</h2>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-secondary">Submit</button>
+    </form>
 {% endblock %}

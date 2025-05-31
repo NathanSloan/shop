@@ -1,0 +1,38 @@
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(74, 74, 220);
+    color: white;
+}
+
+.left h1 {
+    align-self: left;
+}
+
+.right h1 {
+    align-self: right;
+}
+
+h2 {
+    padding: 20px;
+    text-align: center;
+}
+
+.post-form {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+    background-color: grey;
+}

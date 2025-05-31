@@ -1,5 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
+from django.utils import timezone
+from .models import Quote
+from .forms import QuoteForm
 
 # Create your views here.
 def main_page(request):
-    return render(request, 'shop/main_page.html', {})
+    if request.method == "POST":
+        form = QuoteForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect('main_page')
+    else:
+        form = QuoteForm()
+    return render(request, 'shop/main_page.html', {'form': form})
