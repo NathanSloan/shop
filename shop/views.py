@@ -12,9 +12,6 @@ def main_page(request):
             post = form.save(commit=False)
             if request.user.is_authenticated:
                 post.author = request.user
-            else:
-                guest_user = User.objects.get(username="guest")
-                post.author = guest_user
             post.published_date = timezone.now()
             post.save()
             return redirect('main_page')

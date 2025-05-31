@@ -8,7 +8,7 @@ from django.utils import timezone
 # models.Model - states object is a Django Model, saves to database
 class Quote(models.Model):
     # models.ForeignKey - states attribute is a link to another model
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True)
     # models.CharField - states attribute is text with a limited number of characters
     title = models.CharField(max_length=200)
     # models.TextField - states attribute is text of an undefined length
